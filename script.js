@@ -15,4 +15,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
->>>>>>> b7021a2 (all changes)
