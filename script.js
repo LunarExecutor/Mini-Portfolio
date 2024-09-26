@@ -1,7 +1,7 @@
 // Function to toggle the mobile menu
 function toggleMenu() {
     var nav = document.querySelector('.nav-bar ul');
-    // Check if the menu is currently displayed
+    // Toggle the menu visibility
     if (nav.style.display === 'none' || nav.style.display === '') {
         nav.style.display = 'block'; // Show the menu
     } else {
@@ -19,8 +19,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Initially hide the menu on page load (if necessary)
+// Initially set the mobile menu display on page load
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.querySelector('.nav-bar ul');
-    nav.style.display = 'none'; // Set the menu to hidden initially for mobile
+    nav.style.display = 'none'; // Ensure the mobile menu is hidden initially
+});
+
+// Add event listener to the hamburger icon for toggling the menu
+document.getElementById('menu-icon').addEventListener('click', toggleMenu);
+
+// Handle window resize event to adjust menu visibility
+window.addEventListener('resize', function() {
+    var nav = document.querySelector('.nav-bar ul');
+    if (window.innerWidth > 768) {
+        nav.style.display = 'flex'; // Show menu for desktop
+    } else {
+        nav.style.display = 'none'; // Hide menu for mobile
+    }
 });
