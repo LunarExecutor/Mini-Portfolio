@@ -1,45 +1,143 @@
-// Function to toggle the mobile menu
+// ========================
+// MOBILE MENU TOGGLE
+// ========================
 function toggleMenu() {
-    var nav = document.querySelector('.nav-bar ul');
-    // Toggle the menu visibility for mobile
-    if (nav.style.display === 'none' || nav.style.display === '') {
-        nav.style.display = 'block'; // Show the menu
-    } else {
-        nav.style.display = 'none'; // Hide the menu
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks) {
+        navLinks.classList.toggle('active');
     }
 }
 
-// Smooth scrolling when clicking on navigation links
+// Hamburger icon click
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    if (menuIcon) {
+        menuIcon.addEventListener('click', toggleMenu);
+    }
+
+    adjustMenuOnLoad();
+});
+
+// Set correct menu state on load + resize
+function adjustMenuOnLoad() {
+    const navLinks = document.getElementById('nav-links');
+    if (!navLinks) return;
+
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('active'); 
+        navLinks.style.display = ''; 
+    } else {
+        navLinks.style.display = ''; 
+    }
+}
+
+window.addEventListener('resize', adjustMenuOnLoad);
+
+// ========================
+// SMOOTH SCROLLING
+// (only for same-page anchors)
+// ========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+
+        if (targetId && targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after clicking
+                const navLinks = document.getElementById('nav-links');
+                if (navLinks && window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        }
     });
 });
 
-// Initially set the mobile menu display on page load
-document.addEventListener('DOMContentLoaded', function() {
-    var nav = document.querySelector('.nav-bar ul');
-    // Check screen width to set initial display
-    if (window.innerWidth <= 768) {
-        nav.style.display = 'none'; // Ensure the mobile menu is hidden initially
-    } else {
-        nav.style.display = 'flex'; // Show the menu for desktop
+// ========================
+// PROJECT FILTERING (All / Web / IT)
+// Only runs if projects page has filter buttons
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.projects-container .project');
+    const container = document.querySelector('.projects-container');
+
+    if (filterButtons.length > 0 && projects.length > 0 && container) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active state from all buttons
+                filterButtons.forEach(b => b.classList.remove('active-filter'));
+                btn.classList.add('active-filter');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Show / hide projects
+                projects.forEach(project => {
+                    const category = project.getAttribute('data-category');
+
+                    if (filter === 'all') {
+                        project.style.display = 'flex';
+                    } else if (category === filter) {
+                        project.style.display = 'flex';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+
+                // Reorder when "All" is clicked (IT first)
+                if (filter === 'all') {
+                    const itProjects = [];
+                    const webProjects = [];
+
+                    projects.forEach(project => {
+                        if (project.getAttribute('data-category') === 'it') {
+                            itProjects.push(project);
+                        } else {
+                            webProjects.push(project);
+                        }
+                    });
+
+                    container.innerHTML = '';
+                    [...itProjects, ...webProjects].forEach(project => {
+                        container.appendChild(project);
+                    });
+                }
+            });
+        });
     }
 });
 
-// Add event listener to the hamburger icon for toggling the menu
-document.getElementById('menu-icon').addEventListener('click', toggleMenu);
+// ========================
+// FADE-IN ON SCROLL
+// Only runs if elements exist
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+    const faders = document.querySelectorAll('.fade-in-on-scroll');
 
-// Handle window resize event to adjust menu visibility
-window.addEventListener('resize', function() {
-    var nav = document.querySelector('.nav-bar ul');
-    // Check screen width and adjust menu display accordingly
-    if (window.innerWidth > 768) {
-        nav.style.display = 'flex'; // Show menu for desktop
-    } else {
-        nav.style.display = 'none'; // Hide menu for mobile
+    if (faders.length > 0) {
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
     }
 });
