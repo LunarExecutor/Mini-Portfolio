@@ -1,120 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Woo+eSvnR/XyJ0XqfyNY/wtCUeFt/DBsI7eKhbYlbUCmB5d5mE6OmniXpvfMwBqBO4gFzvB4m5iUmL8bgf85yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/index.css">  
-    <title>Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Projects</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-Woo+eSvnR/XyJ0XqfyNY/wtCUeFt/DBsI7eKhbYlbUCmB5d5mE6OmniXpvfMwBqBO4gFzvB4m5iUmL8bgf85yg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/index.css" />
 </head>
 <body>
     <main>
-     <!-- header-->
-     <header>
-        <div>
-            <nav class='nav-bar'>
-            <img class='logo' src='./assets/img/11.png'>
-            <a href="./index.html" class="logo-name">Luna Alagha.</a>
-            <div class="toggle" onclick="toggleMenu();"></div>
-            <div class='bx bx-menu' id="menu-icon"></div>            
-                <ul>
-                    <li><a href='./index.html' >About Me</a></li>
-                    <li><a href='./projects.html' class="active2">Projects</a></li>
-                    <li><a href='./skills.html'>Skills</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <!-- HEADER -->
+        <header>
+    <nav class="nav-bar">
+        <img class="logo" src="./assets/img/11.png" alt="Logo">
+        <a href="./index.html" class="logo-name">Luna Alagha.</a>
 
-    <section id="projects" class='projects'>
-        <h1>Projects</h1>
-        <div class='projects-container'>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/14.png' alt="Project 1">
-                </div>
-                <div class="project-details">
-                    <p>Company Homepage</p>
-                    <a href="https://lunarexecutor.github.io/Home_Page/" class="show-website"><i class='bx bxl-github'></i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/15.png' alt="Project 2">
-                </div>
-                <div class="project-details">
-                    <p>Youtube-clone</p>
-                    <a href="https://lunarexecutor.github.io/Youtube-clone/" class="show-website"><i class='bx bxl-github'></i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/16.png' alt="Project 3">
-                </div>
-                <div class="project-details">
-                    <p>Responsive-Homepage</p>
-                    <a href="https://lunarexecutor.github.io/Responsive-Homepage/" class="show-website"><i class='bx bxl-github'></i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/17.png' alt="Project 4">
-                </div>
-                <div class="project-details">
-                    <p>React Homepage</p>
-                    <a href="https://lunarexecutor.github.io/react-cons/" class="show-website"><i class='bx bxl-github'></i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/22.png' alt="Project 5">
-                </div>
-                <div class="project-details">
-                    <p>IT Services Responsive Website</p>
-                    <a href="https://lunarexecutor.github.io/IT-Services/" class="show-website"><i class='bx bxl-github'></i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/23.png' alt="Project 6">
-                </div>
-                <div class="project-details">
-                    <p>Task List App</p>
-                    <a href="https://mytask-neon.vercel.app/" class="show-website"><i></i> </i> View</a>
-                </div>
-            </div>
-            <div class='project'>
-                <div class="project-image">
-                    <img src='./assets/img/24.png' alt="Project 7">
-                </div>
-                <div class="project-details">
-                    <p>Eat-Split App</p>
-                    <a href="https://eat-split-psi.vercel.app/" class="show-website"><i></i> </i> View</a>
-                </div>
-            </div>
-           
+        <div class="toggle" id="menu-icon">
+            <i class='bx bx-menu'></i>
         </div>
-    </section>
-    
-            
 
-       <!--Footer-->
-       <footer>
-        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#d6aa9e"></stop><stop offset="95%" stop-color="#212f3d"></stop>
-        </linearGradient></defs><path d="M 0,400 L 0,0 C 170.13333333333333,70.53333333333333 340.26666666666665,141.06666666666666 478,175 C 615.7333333333333,208.93333333333334 721.0666666666666,206.26666666666665 876,171 C 1030.9333333333334,135.73333333333335 1235.4666666666667,67.86666666666667 1440,0 L 1440,400 L 0,400 Z" stroke="none" 
-        stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
-    <div class='footer-container'>
-        <p>© 2024 Luna Alagha. All rights reserved.</P>
-    </div>
-    <div class="social-project">
-        <a href="https://www.linkedin.com/in/luna-alagha/" target="_blank"><i class='bx bxl-linkedin'></a></i>
-        <a href="https://github.com/LunarExecutor"><i class='bx bxl-github'></a></i>
-        <a href="https://www.instagram.com/tech.eclipse?igsh=MW1qdnM4MDhtbXRwdA%3D%3D"><i class='bx bxl-instagram'></a></i>
-    </div>
-    
-    </footer>
+        <ul id="nav-links">
+            <li><a href="./index.html">About Me</a></li>
+            <li><a href="./projects.html" class="active2">Projects</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+        </ul>
+    </nav>
+</header>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects">
+
+            <!-- Heading -->
+            <div class="projects-heading">
+                <h1>Projects</h1>
+                <p>
+                    A showcase of my web development and IT Support / Help Desk portfolio projects. These projects demonstrate my skills in building responsive websites, troubleshooting technical issues, documenting workflows, and creating practical, user-focused solutions.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="project-filters">
+                <button class="filter-btn active-filter" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Projects</button>
+                <button class="filter-btn" data-filter="it">IT Support & Help Desk Simulations</button>
+            </div>
+
+            <!-- Projects Container -->
+            <div class="projects-container">
+
+                <!-- IT SUPPORT / HELPDESK PROJECTS -->
+                <div class="project" data-category="it">
+                    <div class="project-icon-card"><i class="bx bx-network-chart"></i></div>
+                    <div class="project-details">
+                        <p>Active Directory / Access Management Simulation</p>
+                        <span class="project-type">IT Support / Active Directory</span>
+                        <small>
+                            Simulates real-world identity and access management tasks handled by IT Help Desk,
+                            including onboarding/offboarding workflows, password resets, MFA support, and access control documentation.
+                        </small>
+                        <div class="project-links">
+                            <a href="https://github.com/LunarExecutor/LunarExecutor-ActiveDirectory-AccessManagement-Simulation" target="_blank" class="show-website github-link">
+                                <i class="bx bxl-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="it">
+                    <div class="project-icon-card"><i class="bx bx-windows"></i></div>
+                    <div class="project-details">
+                        <p>Windows Troubleshooting Lab</p>
+                        <span class="project-type">IT Support / Windows Troubleshooting</span>
+                        <small>
+                            Simulates common Windows support tasks such as Wi-Fi connectivity issues, slow PC remediation, login problems,
+                            printer troubleshooting, and network diagnostics using standard procedures and command-line tools.
+                        </small>
+                        <div class="project-links">
+                            <a href="https://github.com/LunarExecutor/Windows-Troubleshooting-Lab" target="_blank" class="show-website github-link">
+                                <i class="bx bxl-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="it">
+                    <div class="project-icon-card"><i class="bx bx-book-content"></i></div>
+                    <div class="project-details">
+                        <p>Office 365 Help Desk Ticketing Simulation</p>
+                        <span class="project-type">IT Support / Microsoft 365</span>
+                        <small>
+                            Simulates Microsoft 365 support tasks including MFA reset, shared mailbox access,
+                            OneDrive sync issues, Teams sign-in troubleshooting, password resets, and access verification.
+                        </small>
+                        <div class="project-links">
+                            <a href="https://github.com/LunarExecutor/Office-365-Help-Desk-Ticketing-Simulation" target="_blank" class="show-website github-link">
+                                <i class="bx bxl-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEB PROJECTS -->
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/14.png" alt="Company Homepage Project" /></div>
+                    <div class="project-details">
+                        <p>Company Homepage</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://lunarexecutor.github.io/Home_Page/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/Home_Page" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/15.png" alt="YouTube Clone Project" /></div>
+                    <div class="project-details">
+                        <p>YouTube Clone</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://lunarexecutor.github.io/Youtube-clone/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/Youtube-clone" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/16.png" alt="Responsive Homepage Project" /></div>
+                    <div class="project-details">
+                        <p>Responsive Homepage</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://lunarexecutor.github.io/Responsive-Homepage/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/Responsive-Homepage" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/17.png" alt="React Homepage Project" /></div>
+                    <div class="project-details">
+                        <p>React Homepage</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://lunarexecutor.github.io/react-cons/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/react-cons" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/22.png" alt="IT Services Responsive Website" /></div>
+                    <div class="project-details">
+                        <p>IT Services Responsive Website</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://lunarexecutor.github.io/IT-Services/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/IT-Services" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/23.png" alt="Task List App Project" /></div>
+                    <div class="project-details">
+                        <p>Task List App</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://mytask-neon.vercel.app/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/Task-List-App" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image"><img src="./assets/img/24.png" alt="Eat-Split App Project" /></div>
+                    <div class="project-details">
+                        <p>Eat-Split App</p>
+                        <span class="project-type">Web Project</span>
+                        <div class="project-links">
+                            <a href="https://eat-split-psi.vercel.app/" target="_blank" class="show-website"><i class="bx bx-link-external"></i> Live Demo</a>
+                            <a href="https://github.com/LunarExecutor/Eat-Split-App" target="_blank" class="show-website github-link"><i class="bx bxl-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#d6aa9e"></stop>
+                        <stop offset="95%" stop-color="#212f3d"></stop>
+                    </linearGradient>
+                </defs>
+                <path d="M 0,400 L 0,0 C 170.133,70.533 340.266,141.066 478,175 
+                         C 615.733,208.933 721.066,206.266 876,171 
+                         C 1030.933,135.733 1235.466,67.866 1440,0 
+                         L 1440,400 L 0,400 Z" fill="url(#gradient)"></path>
+            </svg>
+
+            <div class="footer-container">
+                <p>© 2026 Luna Alagha. All rights reserved.</p>
+            </div>
+
+            <div class="social-project">
+                <a href="https://www.linkedin.com/in/luna-alagha/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/LunarExecutor" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://www.instagram.com/tech.eclipse?igsh=MW1qdnM4MDhtbXRwdA%3D%3D" target="_blank"><i class="bx bxl-instagram"></i></a>
+            </div>
+        </footer>
     </main>
-    <script src="./script.js"></script>
 
+    <script src="./script.js"></script>
 </body>
+</html>
