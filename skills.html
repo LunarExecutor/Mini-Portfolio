@@ -1,84 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Skills</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Woo+eSvnR/XyJ0XqfyNY/wtCUeFt/DBsI7eKhbYlbUCmB5d5mE6OmniXpvfMwBqBO4gFzvB4m5iUmL8bgf85yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/index.css">  
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-Woo+eSvnR/XyJ0XqfyNY/wtCUeFt/DBsI7eKhbYlbUCmB5d5mE6OmniXpvfMwBqBO4gFzvB4m5iUmL8bgf85yg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/index.css">
 </head>
 <body>
-    <main>
-        <!-- header-->
-    <!-- header-->
+
     <header>
-        <div>
-            <nav class='nav-bar'>
-            <img class='logo' src='./assets/img/11.png'>
+        <nav class="nav-bar">
+            <img class="logo" src="./assets/img/11.png" alt="Logo">
             <a href="./index.html" class="logo-name">Luna Alagha.</a>
-            <div class="toggle" onclick="toggleMenu();"></div>
-            <div class='bx bx-menu' id="menu-icon"></div>            
-                <ul>
-                    <li><a href='./index.html' >About Me</a></li>
-                    <li><a href='./projects.html'>Projects</a></li>
-                    <li><a href='./skills.html' class="active3">Skills</a></li>
-                </ul>
-            </nav>
-        </div>
+
+            <div class="toggle" id="menu-icon">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="./index.html">About Me</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./skills.html" class="active3">Skills</a></li>
+            </ul>
+        </nav>
     </header>
 
- <!-- Skills section -->
- <section id="skills" class="skills">
-    <h1>Skills</h1>
-    <div class="skills-container">
-        <div class="skill html">HTML</div>
-        <div class="skill css">CSS</div>
-        <div class="skill js">JavaScript</div>
-        <div class="skill reacT">React</div>
-        <div class="skill redux">Redux</div>
+    <main>
+        <section class="skills-section">
+            <h1>Skills</h1>
+            <p class="skills-description">
+                My technical expertise and core strengths, including IT support, Microsoft & Office tools, networking, web development, and problem-solving skills.
+            </p>
 
-        <div class="skill WordPress">WordPress</div>
-        <div class="skill figma">Figma</div>
-        <!-- Add more skills as needed -->
-    </div>
-</section>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>Technical Support</h3>
+                    <ul>
+                        <li>Active Directory</li>
+                        <li>Windows Server</li>
+                        <li>Hardware/Software Troubleshooting</li>
+                        <li>Ticketing Systems</li>
+                    </ul>
+                </div>
 
+                <div class="skill-card">
+                    <h3>Microsoft & Office Tools</h3>
+                    <ul>
+                        <li>Microsoft 365 (Word, Excel, Outlook, PowerPoint)</li>
+                        <li>ConnectWise</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
 
+                <div class="skill-card">
+                    <h3>Networking Tools</h3>
+                    <ul>
+                        <li>Packet Tracer</li>
+                        <li>Wireshark</li>
+                    </ul>
+                </div>
 
+                <div class="skill-card">
+                    <h3>Web Technologies</h3>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React.js</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
 
-   <!-- Languages section -->
-<section id="languages" class='languages'>
-    <h1>Languages</h1>
-    <div class='languages-container'>
-        <div class='language'>
-            <p>English</p>
-        </div>
-        <div class='language'>
-            <p>Arabic</p>
-        </div>
-        <div class='language'>
-            <p>Turkish</p>
-        </div>
-    </div>
-</section>
+                <div class="skill-card">
+                    <h3>Core Strengths</h3>
+                    <ul>
+                        <li>Customer Service</li>
+                        <li>Problem Solving</li>
+                        <li>Documentation</li>
+                        <li>Team Collaboration</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
+        <section class="languages-section">
+            <h1>Languages</h1>
+            <div class="languages-container">
+                <div class="language">English</div>
+                <div class="language">Arabic</div>
+                <div class="language">Turkish</div>
+            </div>
+        </section>
 
-    <!--Footer-->
-    <footer>
-        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#d6aa9e"></stop><stop offset="95%" stop-color="#212f3d"></stop>
-        </linearGradient></defs><path d="M 0,400 L 0,0 C 170.13333333333333,70.53333333333333 340.26666666666665,141.06666666666666 478,175 C 615.7333333333333,208.93333333333334 721.0666666666666,206.26666666666665 876,171 C 1030.9333333333334,135.73333333333335 1235.4666666666667,67.86666666666667 1440,0 L 1440,400 L 0,400 Z" stroke="none" 
-        stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
-    <div class='footer-container'>
-        <p>© 2024 Luna Alagha. All rights reserved.</P>
-    </div>
-    <div class="social-project">
-        <a href="https://www.linkedin.com/in/luna-alagha/" target="_blank"><i class='bx bxl-linkedin'></a></i>
-        <a href="https://github.com/LunarExecutor"><i class='bx bxl-github'></a></i>
-        <a href="https://www.instagram.com/tech.eclipse?igsh=MW1qdnM4MDhtbXRwdA%3D%3D"><i class='bx bxl-instagram'></a></i>
-    </div>
-    </footer>
-</main>
-    <script src="./script.js"></script>
+       <!-- FOOTER -->
+        <footer>
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#d6aa9e"></stop>
+                        <stop offset="95%" stop-color="#212f3d"></stop>
+                    </linearGradient>
+                </defs>
+                <path d="M 0,400 L 0,0 C 170.133,70.533 340.266,141.066 478,175 
+                         C 615.733,208.933 721.066,206.266 876,171 
+                         C 1030.933,135.733 1235.466,67.866 1440,0 
+                         L 1440,400 L 0,400 Z" fill="url(#gradient)"></path>
+            </svg>
+
+            <div class="footer-container">
+                <p>© 2026 Luna Alagha. All rights reserved.</p>
+            </div>
+
+            <div class="social-project">
+                <a href="https://www.linkedin.com/in/luna-alagha/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/LunarExecutor" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://www.instagram.com/tech.eclipse?igsh=MW1qdnM4MDhtbXRwdA%3D%3D" target="_blank"><i class="bx bxl-instagram"></i></a>
+            </div>
+        </footer>
+    </main>
+<script src="./assets/script.js"></script>
 </body>
 </html>
