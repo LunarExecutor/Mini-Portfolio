@@ -1,121 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
 
-*{
+/* =========================================
+   ROOT + GLOBAL
+========================================= */
+:root {
+    --main-color: #D6AA9E;
+    --second-color: #212f3d;
+    --primary-color: #f3f3f3;
+    --white-color: #ffffff;
+    --text-muted: #555;
+    --card-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.14);
+    --transition: all 0.3s ease;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     list-style: none;
-    box-sizing: border-box;
     text-decoration: none;
     scroll-behavior: smooth;
 }
-body{
-    background: #f3f3f3;
-    color: var(--second-color);
-}
-:root{
-    --main-color: #D6AA9E;
-    --second-color: #212f3d;
-}
 
-/*header*/
- 
-.nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
+html, body {
     width: 100%;
-    padding: 15px 100px;
-    background: #212f3d;
-    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    transition: 0.5;
-    /* Add padding to ensure the header maintains its height */
-    padding-top: 30px; /* Adjust the padding as needed */
-    padding-bottom: 30px; /* Adjust the padding as needed */
-}
-.logo-name {
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    color: var(--main-color);
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: absolute;
-    left: 100px; /* Adjust the left position as needed */
+    overflow-x: hidden;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #e0e0e0;
-    box-shadow: inset 27px 27px 23px #5a5a5a, inset -27px -27px 23px #ffffff;
-    overflow: hidden;
-    margin-right: 10px;
-    transition: 0.5s;
-    position: absolute;
-    left: 20px; /* Adjust the left position as needed */
+body {
+    background: var(--primary-color);
+    color: var(--second-color);
+    line-height: 1.6;
 }
 
-ul{
-    display: flex;
-}
-.active1{
-    color: var(--main-color);
-    font-weight: 600;
-    border-bottom: 2px solid var(--main-color);
-    padding-bottom: 5px;
-
-}
-.active2{
-    color: var(--main-color);
-    font-weight: 600;
-    border-bottom: 2px solid var(--main-color);
-    padding-bottom: 5px;
-
-}
-.active3{
-    color: var(--main-color);
-    font-weight: 600;
-    border-bottom: 2px solid var(--main-color);
-    padding-bottom: 5px;
-
-}
-ul li a{
-    padding: 10px 22px;
-    color: var(--main-color);
-    border-radius: 2px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-ul li a:hover{
-    background: var(--main-color);
-    color: #fff;
-    border: none;
-}
-#menu-icon {
-    font-size: 30px;
-    color: var(--main-color);
-    cursor: pointer;
-    z-index: 10001;
+main {
+    width: 100%;
 }
 
-/* Define the fade-in animation */
+/* =========================================
+   ANIMATIONS
+========================================= */
 @keyframes fadeIn {
     from {
-        opacity: 0; /* Start from fully transparent */
+        opacity: 0;
+        transform: translateY(12px);
     }
     to {
-        opacity: 1; /* End at fully opaque */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-/* Keyframes for waving animation */
+
 @keyframes waveAnimation {
     0%, 100% {
         transform: rotate(0deg);
@@ -128,71 +66,128 @@ ul li a:hover{
     }
 }
 
-/* Apply waving animation to the wave span */
 .wave {
     display: inline-block;
     animation: waveAnimation 2.5s;
     transform-origin: bottom;
 }
 
-/* Style for the name span */
 .name {
-    font-weight: bold;
-    color: #9e7e75; /* You can adjust the color as needed */
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+/* =========================================
+   NAVBAR / HEADER (RESTORED ORIGINAL STYLE)
+========================================= */
+header {
+    width: 100%;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #212f3d;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo-name {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    position: absolute;
+    left: 100px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: 0.5s;
+    position: absolute;
+    left: 20px;
+}
+
+#nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+#nav-links li a {
+    padding: 10px 22px;
+    color: var(--main-color);
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+#nav-links li a:hover {
+    background: var(--main-color);
+    color: #212f3d;
+    border: none;
 }
 
 
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    .nav-bar {
-        padding: 30px;
-    }
-
-    #menu-icon {
-        display: block;
-    }
-
-    ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    ul li a {
-        display: block;
-        padding: 15px 0;
-    }
+/* Active nav states */
+.active1,
+.active2,
+.active3 {
+    color: var(--main-color) !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 5px;
+    
 }
-/* Adjust the visibility of the hamburger menu icon based on screen size */
-@media (min-width: 768px) {
-    #menu-icon {
-      display: none;
-    }
-  }
-  
+.active1:hover,
+.active2:hover,
+.active3:hover {
+    color: #212f3d !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 5px;
+}
 
+/* Mobile menu icon */
+.toggle,
+#menu-icon {
+    display: none;
+    font-size: 30px;
+    color: var(--main-color);
+    cursor: pointer;
+    z-index: 1001;
+}
 
-/*About Me*/
+/* =========================================
+   ABOUT PAGE
+   (for index.html)
+========================================= */
 #about {
-    height: auto;
-    padding-top: 8rem;
+    min-height: 100vh;
+    padding: 160px 20px 60px;
     background-color: var(--primary-color);
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
     justify-content: center;
+    gap: 1.8rem;
     text-align: center;
 }
 
@@ -200,245 +195,584 @@ ul li a:hover{
     font-size: 3rem;
     color: var(--second-color);
     font-weight: 600;
-    opacity: 0; 
-    animation: fadeIn 1s ease-in-out forwards;
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-}
-
-.name {
-    color: var(--main-color);
-    font-weight: 600;
-    font-weight: bold;
-    animation: nameAnimation 2s infinite;
+    animation: fadeIn 0.9s ease forwards;
 }
 
 .intro {
-    font-size: 1.2rem;
-    max-width: 700px;
+    font-size: 1.15rem;
+    max-width: 750px;
     color: var(--second-color);
     font-weight: 400;
-    margin-bottom: -30px;
+    padding: 0 10px;
 }
 
-/* Social */
-.social, .social-project {
+/* Optional if you use SVG in about */
+#about svg {
+    width: 20%;
+    height: auto;
+    margin: 35px auto 10px;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+.social,
+.social-project {
     text-align: center;
-    margin-top: 1rem; /* Adjust margin as needed */
+    margin-top: 1rem;
 }
 
-.social i, .social-project i {
-    margin: 0 0.5rem; /* Adjust margin as needed */
+.social a,
+.social-project a {
+    display: inline-block;
+}
+
+.social i,
+.social-project i {
+    margin: 0 0.5rem;
     color: var(--second-color);
     font-size: 24px;
     cursor: pointer;
-    transition: 0.5s;
-    padding: 5px 5px 5px 5px;
-    font-weight: 400;
+    transition: var(--transition);
+    padding: 5px;
 }
 
-.social i:hover, .social-project i:hover {
+.social i:hover,
+.social-project i:hover {
     color: var(--main-color);
-    transform: scale(1.2);
-    transition: 0.5s;
+    transform: scale(1.15);
 }
 
+/* =========================================
+   PROJECTS PAGE
+   (for projects.html)
+========================================= */
+.projects {
+    padding: 140px 20px 60px;
+}
 
+/* Reset old heading conflicts */
+#projects h1,
+.projects h1 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
 
-/* Projects section styles */
-#projects h1{
+.projects-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    max-width: 900px;
     text-align: center;
-    padding-top: 120px;
-    padding-bottom: 50px;
+    padding: 0 15px;
+}
+
+.projects-heading h1 {
     font-size: 3rem;
     color: var(--second-color);
     font-weight: 600;
-    margin-bottom: -80px;
-    opacity: 0; 
-    animation: fadeIn 1s ease-in-out forwards;
-
-}
-.projects {
-    padding: 50px 20px;
+    margin: 0 0 20px 0 !important;
+    line-height: 1.2;
+    animation: fadeIn 0.9s ease forwards;
 }
 
-.projects h1 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
+.projects-heading p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
+/* Filter buttons */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0 40px;
+    padding: 0 15px;
+}
+
+.filter-btn {
+    padding: 10px 18px;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    color: var(--second-color);
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active-filter {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+/* Projects grid */
 .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 20px;
 }
 
+/* Project card */
 .project {
-    width: 300px; /* Adjust the width as needed */
-    margin: 0 20px 20px 0; /* Add margin between projects */
-    border-radius: 10px;
-    background-color: #f9f9f9; /* Background color for each project */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    transition: transform 0.3s ease; /* Add transition effect */
+    width: 320px;
+    border-radius: 14px;
+    background-color: var(--white-color);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project:hover {
-    transform: translateY(-5px); /* Lift project card on hover */
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
 }
 
+/* Project image */
 .project-image img {
-    width: 100%; /* Ensure the project image fills its container */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
 }
 
+/* IT project icon card */
+.project-icon-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 210px;
+    background: linear-gradient(135deg, var(--main-color), var(--second-color));
+}
+
+.project-icon-card i {
+    font-size: 4rem;
+    color: var(--white-color);
+}
+
+/* Project details */
 .project-details {
-    padding: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.project p {
-    font-size: 16px;
-    margin-bottom: 10px;
+.project-details p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--second-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.project-type {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 5px 12px;
+    background: rgba(214, 170, 158, 0.18);
+    color: var(--second-color);
+    border: 1px solid rgba(214, 170, 158, 0.5);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.project-details small {
+    display: block;
+    color: #4b5563;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+/* Project buttons / links */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 12px;
 }
 
 .show-website {
-    display: block;
+    display: inline-block;
     width: 100%;
     padding: 10px;
-    background-color: #D6AA9E;
+    background-color: var(--main-color);
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .show-website:hover {
-    background-color: #212f3d;
+    background-color: var(--second-color);
 }
 
-/* Skills section styles */
-#skills h1{
+.github-link {
+    background-color: var(--second-color);
+    color: #fff;
+}
+
+.github-link:hover {
+    background-color: var(--main-color);
+}
+
+.social-project {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SKILLS PAGE
+   (for skills.html)
+========================================= */
+.skills-section {
+    padding: 150px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-section h1 {
     text-align: center;
-    padding-top: 120px;
-    padding-bottom: 50px;
     font-size: 3rem;
     color: var(--second-color);
     font-weight: 600;
-    margin-bottom: -20px;
-    opacity: 0; 
-    animation: fadeIn 1s ease-in-out forwards;
-}
-/* Skills section styles */
-.skills {
-    padding: 50px 20px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    animation: fadeIn 0.9s ease forwards;
 }
 
-.skills h1 {
-    font-size: 36px;
+.skills-section .skills-description {
     text-align: center;
-    margin-bottom: 40px;
-    color: #333; /* Set color for the heading */
+    max-width: 750px;
+    margin: 0 auto 50px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    padding: 0 10px;
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.skill {
-    width: 120px; /* Adjust the width as needed */
-    text-align: center;
-    margin: 0 20px 40px 20px; /* Add margin between skills */
-    padding: 20px;
-    border-radius: 10px;
-    background-color: var(--main-color); /* Background color for each skill */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
-    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
-}
-
-.skill:hover {
-    transform: translateY(-5px); /* Move skill up slightly on hover */
-}
-
-.skill p {
-    font-size: 16px;
-    margin-bottom: 0; /* Remove margin bottom for paragraphs */
-    color: #666; /* Set color for the skill text */
-}
-
-/* Add hover effect for skill text */
-.skill:hover p {
-    color: #333;
-}
-
-/* Add hover effect for skill background */
-.skill:hover {
-    background-color: #e0e0e0;
-}
-
-
-/* Languages section styles */
-#languages h1{
-    text-align: center;
-    color: var(--second-color);
-    opacity: 0; 
-    animation: fadeIn 1s ease-in-out forwards;
-}
-.languages {
-    padding: 50px 20px;
-}
-
-.languages h1 {
-    font-size: 36px;
-    text-align: center;
+    align-items: stretch;
+    gap: 24px;
     margin-bottom: 20px;
+}
+
+.skill-card {
+    width: 100%;
+    max-width: 240px;
+    min-height: 240px;
+    background-color: var(--main-color);
+    border-radius: 14px;
+    padding: 22px 18px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    background-color: #e9ddd8;
+    box-shadow: var(--card-shadow-hover);
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: var(--second-color);
+    line-height: 1.4;
+}
+
+.skill-card ul {
+    display: block;
+    padding-left: 18px;
+    margin: 0;
+}
+
+.skill-card ul li {
+    list-style: disc;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #2f2f2f;
+}
+
+/* Languages */
+.languages-section {
+    padding: 40px 20px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.languages-section h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.4rem;
+    color: var(--second-color);
+    font-weight: 600;
 }
 
 .languages-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .language {
-    width: 120px; /* Adjust the width as needed */
+    width: 150px;
+    padding: 16px;
     text-align: center;
-    margin: 0 20px 20px 0; /* Add margin between languages */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    background-color: var(--main-color); /* Background color for each language box */
-    transition: transform 0.3s ease; /* Add smooth transition on hover */
+    border-radius: 12px;
+    background-color: var(--main-color);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    font-weight: 500;
+    color: var(--second-color);
 }
 
 .language:hover {
-    transform: translateY(-5px); /* Move up slightly on hover for a floating effect */
+    transform: translateY(-5px);
+    background-color: #e9ddd8;
 }
 
-.language p {
-    font-size: 16px;
-    margin-bottom: 0; /* Remove margin bottom for paragraphs */
-}
-
-/*footer*/
-.footer-container p{
-    margin: 0;
-    font-size: .8rem;
-    margin: 10px auto;
-    padding: 20px 0;
+/* =========================================
+   FOOTER
+========================================= */
+.footer-container {
     text-align: center;
-    
-}
-#about svg{
-    width: 20%;
-    height: 20%;
-    margin: 45px auto;
-    margin-bottom: 10px;
+    padding: 30px 20px 40px;
 }
 
+.footer-container p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--second-color);
+    padding-bottom: 12px;
+}
+
+.footer-container .social-project {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media screen and (max-width: 992px) {
+    .nav-bar {
+        padding: 15px 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .logo {
+        left: 15px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .logo-name {
+        left: 78px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .nav-bar {
+        padding: 20px 20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        left: 12px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-name {
+        left: 68px;
+        font-size: 0.95rem;
+    }
+
+    .toggle,
+    #menu-icon {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #212f3d;
+        padding: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav-links li a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    /* About */
+    #about {
+        padding: 140px 15px 50px;
+        min-height: auto;
+    }
+
+    #about h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    #about svg {
+        width: 40%;
+    }
+
+    /* Projects */
+    .projects {
+        padding: 120px 15px 50px;
+    }
+
+    .projects-heading h1 {
+        font-size: 2.3rem;
+        margin-bottom: 16px !important;
+    }
+
+    .projects-heading p {
+        font-size: 0.98rem;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .project-image img,
+    .project-icon-card {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .project-icon-card i {
+        font-size: 3.2rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .show-website {
+        width: 100%;
+    }
+
+    /* Skills */
+    .skills-section {
+        padding: 130px 15px 30px;
+    }
+
+    .skills-section h1 {
+        font-size: 2.3rem;
+    }
+
+    .skills-section .skills-description {
+        font-size: 0.98rem;
+        margin-bottom: 35px;
+    }
+
+    .skills-container {
+        gap: 18px;
+    }
+
+    .skill-card {
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .languages-section {
+        padding: 30px 15px 30px;
+    }
+
+    .languages-section h1 {
+        font-size: 2rem;
+    }
+
+    .language {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    /* Footer */
+    .footer-container {
+        padding: 25px 15px 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-name {
+        font-size: 0.85rem;
+        left: 62px;
+    }
+
+    #about h1,
+    .projects-heading h1,
+    .skills-section h1 {
+        font-size: 2rem;
+    }
+
+    .languages-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .filter-btn {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+}
